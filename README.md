@@ -36,7 +36,6 @@
 - [Research Paper](#-research-paper)
 - [Technical Details](#-technical-details)
 - [Bill of Materials](#-bill-of-materials)
-- [Contributing](#-contributing)
 - [License](#-license)
 - [Citation](#-citation)
 - [Acknowledgments](#-acknowledgments)
@@ -322,8 +321,8 @@ Feel free to visit the Youtube MUSTEM Channel: [`https://www.youtube.com/@Mustem
 **Award:** Strong Accept  
 **Authors:** Paloma Sette, Maria Werneck, William Barbosa, Ana Loubacker
 
-📄 **Read the paper:** [`research/paper/MUSTEM_EHB2025.pdf`](research/paper/MUSTEM_EHB2025.pdf)  
-📊 **View slides:** [`research/presentation/MUSTEM_EHB2025_slides.pdf`](research/presentation/MUSTEM_EHB2025_slides.pdf)
+**Read the paper:** [`research/paper_MUSTEM_EHB2025.pdf`](research/paper_MUSTEM_EHB2025.pdf)  
+**View slides:** [`research/MUSTEM_EHB2025_slides.pdf`](research/MUSTEM_EHB2025_slides.pdf)
 
 ---
 
@@ -384,20 +383,6 @@ Feel free to visit the Youtube MUSTEM Channel: [`https://www.youtube.com/@Mustem
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
-
-### Areas Where We Need Help:
-
-- [ ] **Hardware:** Alternative motor configurations, better enclosure designs
-- [ ] **Firmware:** Optimization for lower latency, additional frequency bands
-- [ ] **Software:** Mobile app development, cloud music library
-- [ ] **Research:** User studies, validation with deaf community
-- [ ] **Documentation:** Translations, tutorials, assembly videos
-
----
-
 ## 📜 License
 
 This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
@@ -421,7 +406,7 @@ If you use MUSTEM in your research, please cite:
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **PUC-Rio** - Pontifícia Universidade Católica do Rio de Janeiro
 - **EHB 2025** - International Conference on e-Health and Bioengineering
@@ -433,11 +418,8 @@ If you use MUSTEM in your research, please cite:
 ## 📧 Contact
 
 **Paloma Sette** - Research Lead  
-📧 Email: [your-email]  
-🔗 LinkedIn: [your-linkedin]  
-🐦 Twitter: [@your-handle]
-
-**Project Link:** [https://github.com/palomafsette/MUSTEM](https://github.com/palomafsette/MUSTEM)
+- Email: [pfls.sette@gmail.com](pfls.sette@gmail.com)  
+- LinkedIn: [https://linkedin.com/in/paloma-sett](https://linkedin.com/in/paloma-sett)  
 
 ---
 
