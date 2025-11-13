@@ -1,1 +1,0 @@
-# FFT, análise espectral

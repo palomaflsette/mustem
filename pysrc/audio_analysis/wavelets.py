@@ -1,1 +1,0 @@
-# Transformadas Wavelet
