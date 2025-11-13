@@ -265,8 +265,8 @@ cd MUSTEM
 ```bash
 cd hardware/firmware/tactile_system/
 # Open tactile_system.ino in Arduino IDE
-# Select: Tools → Board → Arduino UNO
-# Select: Tools → Port → [your port]
+# Select: Tools --> Board --> Arduino UNO
+# Select: Tools --> Port --> [your port]
 # Upload
 ```
 
@@ -278,7 +278,7 @@ cd hardware/firmware/visual_system/
 #   - Adafruit GFX
 #   - Adafruit TFT
 #   - arduinoFFT
-# Select: Tools → Board → Arduino Mega 2560
+# Select: Tools --> Board --> Arduino Mega 2560
 # Upload
 ```
 
@@ -310,17 +310,7 @@ python mustem_artistic_visualization.py [audio_file.wav]
 
 ## 🎥 Video Demonstrations
 
-### Full System Demo
-[![Full System Demo](media/demo_video_thumbnail.png)](https://youtube.com/your-video-link)
-> Complete demonstration with "Uptown Funk" by Bruno Mars showing synchronized tactile, embedded visual, and dashboard outputs
-
-### Individual Components
-- [Vibrotactile System Demo](https://youtube.com/link)
-- [LCD Display Demo](https://youtube.com/link)
-- [Dashboard Interface Demo](https://youtube.com/link)
-- [Artistic Visualization Demo](https://youtube.com/link)
-
-**See:** `media/demo_videos/README.md` for more videos
+Feel free to visit the Youtube MUSTEM Channel: [`https://www.youtube.com/@Mustem7`](https://www.youtube.com/@Mustem7)
 
 ---
 
