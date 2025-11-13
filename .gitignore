@@ -1,13 +1,39 @@
-__pycache__
-*.pyc
-*.ipynb_checkpoints
-.env
-.env.*
-.vscode
-.virtual_documents
-data/raw/
-data/processed/
-outputs/
-motores
-.pytest_cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+
+# Arduino
+*.hex
+*.elf
+*.eep
+*.lst
+*.map
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Build
+build/
+dist/
+
+# Media (large files)
+*.mp4
+*.avi
+*.mov
+
+# others
 quarantine/
+logs/
