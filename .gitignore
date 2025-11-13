@@ -10,3 +10,4 @@ data/processed/
 outputs/
 motores
 .pytest_cache
+quarantine/
