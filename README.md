@@ -10,7 +10,7 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/palomafsette/MUSTEM)
 
-**[📖 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🎥 Demos](#-video-demonstrations) • [📚 Research](#-research-paper) • [🤝 Contributing](#-contributing)**
+**[📖 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🎥 Demos](#-video-demonstrations) • [📚 Research](#-research-paper)**
 
 </div>
 
@@ -409,7 +409,7 @@ If you use MUSTEM in your research, please cite:
 ## Acknowledgments
 
 - **PUC-Rio** - Pontifícia Universidade Católica do Rio de Janeiro
-- **EHB 2025** - International Conference on e-Health and Bioengineering
+- **EHB 2025** - [International Conference on e-Health and Bioengineering](https://www.ehbconference.ro/Home.aspx)
 - **Deaf community** - For feedback and co-design input
 - **Open-source contributors** - Arduino, Python, and maker communities
 
