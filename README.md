@@ -1,365 +1,462 @@
-# 🎭 The Central Question: Can Deaf People "Truly" Experience Music Emotionally?
+<div align="center">
 
-## The Question That Challenges Everything
+# 🎵 MUSTEM
+### Music - Multisensory Emotional Translation
 
+**A scientifically-grounded dual-modality system for vibrotactile and visual translation of music as an assistive technology**
 
-> **"How can this system truly translate the emotional experience of music to deaf individuals? Isn't emotion in music inherently difficult—perhaps impossible—to translate?"**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Arduino](https://img.shields.io/badge/Arduino-00979D?logo=Arduino&logoColor=white)](https://www.arduino.cc/)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/palomafsette/MUSTEM)
 
-This question, while appearing as skepticism, actually touches on deep philosophical assumptions about sensory experience, disability, and what constitutes "authentic" engagement with art.
+**[📖 Documentation](#-documentation) • [🚀 Quick Start](#-quick-start) • [🎥 Demos](#-video-demonstrations) • [📚 Research](#-research-paper) • [🤝 Contributing](#-contributing)**
 
-**Let's unpack why this question matters, why it's based on problematic assumptions, and how to answer it.**
-
----
-
-## 🧠 The Philosophical Problem with the Question
-
-### The Hidden Assumption
-
-The question assumes there exists **one "true" emotional musical experience** that is inherently **auditory**.
-
-This framing implies:
-
-- Hearing people have "authentic" musical experience
-- Deaf people can only have "approximated" or "translated" experience
-- Non-auditory pathways are inherently "second-class"
-
-**This is ableism disguised as scientific skepticism.**
-
-### The Correct Reframing
-
-The question should not be:
-
-> "Can deaf people experience music **the same way** hearing people do?"
-
-The question should be:
-
-> "Can we provide systematic access to musical information through modalities that enable **meaningful, authentic emotional engagement** for deaf individuals?"
-
-**The answer to the second question is: Yes.**
+</div>
 
 ---
 
-## 🎨 Musical Experience is Relative, Not Absolute
+## 📑 Table of Contents
 
-### Core Argument
-
-**Musical experience is relative to individual sensory capacity.**
-
-A person born deaf does not experience music as:
-
-- "Auditory experience minus sound" (a deficit model)
-
-They experience music as:
-
-- "Structured sensory information through the modalities available to them" (a difference model)
-
-**This is not inferior. This is different. And different is valid.**
-
-### Why This Matters
-
-Consider this thought experiment:
-
-**Scenario 1: The Blind Art Critic**
-
-> "How can a blind person truly understand a painting through verbal description? They'll never see the colors, the brushstrokes, the light. Can they really experience it emotionally?"
-
-**Answer:** They will have a **different but equally valid** experience. It may not be visual, but it can be profoundly meaningful and emotional in its own right. To dismiss it as "not true understanding" is to impose sighted-centric assumptions.
-
-**Scenario 2: The Synesthete Musician**
-
-> Some people have synesthesia - they "see" colors when hearing sounds, or "taste" words. Is their musical experience "inferior" because it's different from typical auditory processing?
-
-**Answer:** Of course not. Many synesthetes report that music is **even richer** for them because of additional sensory layers.
-
-**Scenario 3: The Deaf Music Experiencer**
-
-> A deaf person experiences music through vibrotactile and visual modalities. Is this "inferior" to auditory experience?
-
-**Answer:** No. It is **authentic to their perceptual reality**. And it may even access sensory dimensions that are **more developed** in deaf individuals than in hearing people.
+- [Overview](#-overview)
+- [The Central Question](#-the-central-question)
+- [System Architecture](#-system-architecture)
+  - [Hardware Components](#hardware-components)
+  - [Dual-Modality Design](#dual-modality-design)
+- [Scientific Foundations](#-scientific-foundations)
+  - [Stevens' Power Law](#1-stevens-power-law-psychoacoustic-scaling)
+  - [Logarithmic Frequency Mapping](#2-logarithmic-frequency-mapping)
+  - [Golden Ratio Phyllotaxis](#3-golden-ratio-phyllotaxis)
+- [Repository Structure](#-repository-structure)
+- [Getting Started](#-getting-started)
+  - [Hardware Setup](#hardware-setup)
+  - [Firmware Installation](#firmware-installation)
+  - [Software Installation](#software-installation)
+- [Video Demonstrations](#-video-demonstrations)
+- [Research Paper](#-research-paper)
+- [Technical Details](#-technical-details)
+- [Bill of Materials](#-bill-of-materials)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Citation](#-citation)
+- [Acknowledgments](#-acknowledgments)
 
 ---
 
-## 🧬 Neuroscience Supports Alternative Musical Pathways
+## 🎯 Overview
 
-### Cross-Modal Plasticity in Deaf Individuals
+**MUSTEM** (Music - Multisensory Emotional Translation) is an open-source assistive technology that makes music accessible to deaf and hard-of-hearing individuals through complementary dual-modality translation:
 
-Research in neuroplasticity demonstrates that deaf individuals' brains **reorganize** to optimize available sensory modalities:
+- **Vibrotactile (FEEL):** 4-channel spatial frequency mapping for rhythm and foundation
+- **Visual (SEE):** Mathematical color and pattern generation for structure and details
 
-#### Key Findings:
+### Why MUSTEM?
 
-1. **Auditory cortex is not idle**
-    - In deaf individuals, the "auditory" cortex is recruited for **visual and tactile processing**
-    - These areas process rhythm, temporal patterns, and spatial information through alternative modalities
-2. **Enhanced sensory capabilities**
-    - Deaf individuals often have **superior peripheral vision** compared to hearing individuals
-    - **Increased tactile sensitivity** and spatial awareness
-    - **More efficient visual processing of rhythmic patterns**
-3. **Musical structure processing**
-    - fMRI studies show deaf individuals process **musical rhythm** in similar brain regions as hearing individuals
-    - The **limbic system** (emotion processing) activates regardless of sensory input modality
-    - **Emotional response to music does not require auditory input**
+- **430+ million** people worldwide are deaf or hard-of-hearing (WHO, 2023)
+- Music represents **cultural and emotional exclusion**, not just auditory inaccessibility
+- Current solutions (amplification, visual-only, vibration-only) have significant limitations
+- **No integrated dual-modality approach** exists with scientific grounding
 
-#### Implication for MUSTEM:
+### Key Features
 
-When we provide musical information via **tactile + visual** modalities, we are feeding **sensory channels that may be MORE developed** in deaf individuals than in hearing people.
-
-**We're not providing "second-best" access. We're providing access through optimized pathways.**
+**Scientifically-grounded** - Based on Stevens' Power Law, Fletcher-Munson curves, and golden ratio  
+**Real-time processing** - <60ms latency on affordable hardware  
+**Affordable** - <$50 USD in components  
+**Open-source** - Hardware, firmware, and software freely available  
+**Validated** - Pilot study (N=7) with positive preliminary results  
 
 ---
 
-## Real-World Evidence: Deaf Musicians and Music Experiencers
+## The Central Question
 
-### Case Study 1: Evelyn Glennie - World-Renowned Deaf Percussionist
+> **"Can deaf people *truly* experience music emotionally through non-auditory modalities?"**
 
-**Dame Evelyn Glennie** is profoundly deaf and one of the world's most celebrated percussionists.
 
-In her famous essay _"Hearing Essay"_ (1993), she wrote:
+**Our answer:** Musical experience is **relative to individual sensory capacity**. A deaf person experiencing music through tactile and visual modalities is not having an "inferior" experience—they're having an **authentic experience through their perceptual reality**.
 
-> **"Hearing is basically a specialized form of touch. Sound is simply vibrating air which the ear picks up and converts to electrical signals... For some reason we tend to make a distinction between hearing a sound and feeling a vibration, in reality they are the same thing."**
+Read our complete philosophical framework: **[docs/PHILOSOPHICAL_FRAMEWORK.md](docs/PHILOS_FRAMEWORK.md)**
 
-#### What This Means:
+### Core Arguments:
 
-- **Hearing IS touch** - just through specialized receptors (cochlear hair cells)
-- **Tactile vibration IS hearing** - just through skin mechanoreceptors
-- The distinction is **anatomical**, not experiential
-- Both pathways carry **the same information**: frequency, amplitude, temporal patterns
-
-**Glennie describes profound emotional connection to music.** No one questions whether her experience is "true" - yet she accesses music non-auditorily.
+1. **Musical emotion emerges from pattern processing**, not specific sensory modality
+2. **Deaf individuals have adapted sensory systems** with enhanced tactile and visual capabilities
+3. **Validity is user-determined**, not defined by hearing-centric assumptions
 
 ---
 
-### Case Study 2: Shaheem Sanchez - Deaf Professional Dancer
+## 🏗️ System Architecture
 
-**Shaheem Sanchez** is a profoundly deaf dancer who performs to music by:
+### Hardware Components
+```
+┌─────────────┐
+│  Ambient    │
+│   Sound     │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  Electret   │
+│ Microphone  │
+└──────┬──────┘
+       │
+       ├──────────────────────┬─────────────────────┐
+       │                      │                     │
+       ▼                      ▼                     ▼
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│  Arduino    │      │  Arduino    │      │   Python    │
+│    UNO      │      │    Mega     │      │  Dashboard  │
+│ (Tactile)   │      │  (Visual)   │      │ (Education) │
+└──────┬──────┘      └──────┬──────┘      └─────────────┘
+       │                     │
+       ▼                     ▼
+┌─────────────┐      ┌─────────────┐
+│ 4× Motors   │      │ TFT LCD     │
+│ (Wrists)    │      │  Display    │
+└─────────────┘      └─────────────┘
+```
 
-- Feeling **bass vibrations** through the floor via his feet
-- Watching **visual cues** from other dancers and stage lighting
-- **Internalizing rhythm** through body movement
+### Dual-Modality Design
 
-He describes his connection to music as:
-
-> **"Deeply emotional and spiritual. Music moves through my body in ways that hearing people might not even experience."**
-
-**Question:** Is his emotional experience "fake" because it didn't enter through his ears?
-
-**Answer:** Of course not. His experience is **authentic to his sensory reality**.
-
----
-
-### Case Study 3: Deaf DJs and Music Producers
-
-There are **deaf DJs** (e.g., Robbie Wilde, Troi Lee) who:
-
-- Mix tracks by **feeling bass through subwoofers** and **watching waveforms**
-- Read **visual feedback** from software to time transitions
-- Use **tactile monitors** to feel beat alignment
-
-They describe **joy, creativity, and emotional fulfillment** in music production.
-
-**Their emotional engagement is real.** It's just accessed through different modalities.
-
----
-
-## 📚 Scientific Literature Supporting Modality-Independent Musical Experience
-
-### Key Research Papers:
-
-#### 1. **Darrow, A. A. (2006). "The Role of Music in Deaf Culture: Deaf Students' Perception of Emotion in Music"**
-
-- **Finding:** Deaf students who had access to structured musical experiences (vibration, visual, rhythm) developed:
-    - Aesthetic appreciation of music
-    - Emotional responses comparable to hearing peers
-    - Individual musical preferences
-- **Conclusion:** _"Musical experience is not dependent on hearing."_
+| Modality | Purpose | Hardware | Key Features |
+|----------|---------|----------|--------------|
+| **Vibrotactile** | Rhythm & Foundation | 4× ERM motors | - Psychoacoustic band separation<br>- Stevens' Law scaling (n=0.67)<br>- <60ms latency<br>- Spatial discrimination (40cm) |
+| **Visual** | Structure & Details | TFT LCD 320×240 | - Log-frequency color mapping<br>- Golden angle phyllotaxis (137.5°)<br>- Real-time FFT processing<br>- Nature-inspired patterns |
 
 ---
 
-#### 2. **Petitto, L. A., et al. (2000). "Speech-like cerebral activity in profoundly deaf people processing signed languages"**
+## 🔬 Scientific Foundations
 
-- **Finding:** Deaf individuals' brains process **rhythm and temporal patterns** in language (sign language) using areas typically associated with auditory processing
-- **Implication:** The brain cares about **patterns and structure**, not the sensory modality delivering them
+MUSTEM is grounded in three core scientific principles:
 
----
+### 1. Stevens' Power Law (Psychoacoustic Scaling)
+```
+I = S^n
 
-#### 3. **Finney, E. M., et al. (2001). "Visual stimuli activate auditory cortex in the deaf"**
+Where:
+  I = perceived intensity
+  S = stimulus magnitude
+  n = 0.67 (vibrotactile exponent)
+```
 
-- **Finding:** In deaf individuals, the auditory cortex responds to **visual stimuli** with temporal structure (flashing lights, moving patterns)
-- **Implication:** "Auditory" areas are actually **temporal/rhythmic pattern processors**, not exclusively auditory
+**Why it matters:** Human perception is non-linear. Stevens' Law models this, ensuring weak signals are perceivable and strong signals are comfortable.
 
----
-
-#### 4. **Levänen, S., & Hamdorf, D. (2001). "Feeling vibrations: enhanced tactile sensitivity in congenitally deaf humans"**
-
-- **Finding:** Deaf individuals show **enhanced tactile sensitivity** compared to hearing controls, especially for vibrotactile stimuli in frequency ranges overlapping with speech/music
-- **Implication:** Tactile musical information may be **more accessible** to deaf individuals than to hearing people
-
----
-
-## 🔬 The Science of Emotion in Music (It's Not About Ears)
-
-### What Creates Emotional Response to Music?
-
-Music evokes emotion through **structural features**, not through the specific sensory modality:
-
-#### Key Emotional Triggers in Music:
-
-1. **Rhythm and tempo**
-    - Fast tempo → excitement, joy
-    - Slow tempo → calm, sadness
-    - **Accessible through:** auditory, tactile, visual (tempo visualization)
-2. **Harmonic tension and resolution**
-    - Dissonance → tension
-    - Consonance → release
-    - **Accessible through:** auditory, visual (color mapping of frequency relationships)
-3. **Dynamic range (loud/soft contrasts)**
-    - Crescendo → building anticipation
-    - Sudden loud → surprise
-    - **Accessible through:** auditory, tactile (vibration intensity), visual (size/brightness)
-4. **Melodic contour**
-    - Ascending melody → hope, triumph
-    - Descending melody → melancholy
-    - **Accessible through:** auditory, visual (spiral growth patterns)
-5. **Temporal patterns and expectation**
-    - Predictable patterns → comfort
-    - Unexpected changes → surprise
-    - **Accessible through:** any modality that preserves temporal structure
+**Application in MUSTEM:**
+- Vibrotactile intensity: `PWM = (RMS_energy)^0.67 × 255`
+- Visual brightness: `Brightness = (FFT_magnitude)^0.67`
 
 ---
 
-### The Neuroscience of Musical Emotion:
+### 2. Logarithmic Frequency Mapping
+```
+s = 12 × log₂(f / 55Hz)
+hue = (s mod 84) / 84 × 360°
 
-**Where does emotional processing happen?**
+Where:
+  f = frequency in Hz
+  s = semitone number
+  hue = color hue (0-360°)
+```
 
-- **Limbic system** (amygdala, hippocampus) - processes emotional significance
-- **Nucleus accumbens** - reward processing ("chills" from music)
-- **Prefrontal cortex** - emotional regulation and interpretation
+**Why it matters:** Musical intervals are logarithmic (12-tone equal temperament). Logarithmic mapping preserves octave equivalence—notes an octave apart map to similar colors.
 
-**Critical point:** These regions respond to **structured sensory input with temporal and relational patterns**, regardless of whether that input came from:
-
-- Auditory cortex
-- Somatosensory cortex (touch)
-- Visual cortex
-
-**The emotional response doesn't care about the sensory modality. It cares about the patterns.**
-
----
-
-## 🎯 MUSTEM's Approach: Preserving Musical Structure Across Modalities
-
-### What We Preserve (And Why It Matters)
-
-MUSTEM doesn't attempt to "replicate hearing." Instead, it **preserves the structural features of music** that enable emotional engagement:
-
-#### 1. **Frequency Relationships → Logarithmic Color Mapping**
-
-- **Musical property:** Octave equivalence (notes separated by octaves sound "similar")
-- **MUSTEM implementation:** Logarithmic frequency-to-hue mapping based on 12-tone equal temperament
-- **Result:** Visually similar colors for notes separated by octaves
-- **Emotional access:** Harmonic relationships preserved visually
-
-#### 2. **Rhythmic Patterns → Spatial Tactile Distribution**
-
-- **Musical property:** Rhythm as temporal structure of accents
-- **MUSTEM implementation:** 4-channel vibrotactile system mapping frequency bands (kick, bass, voice, treble) to spatially separated motors
-- **Result:** Rhythmic events felt as distinct spatial-temporal patterns
-- **Emotional access:** Groove, pulse, and drive
-
-#### 3. **Intensity Dynamics → Stevens' Power Law Scaling**
-
-- **Musical property:** Dynamic range (soft/loud contrasts)
-- **MUSTEM implementation:** Psychoacoustic scaling (exponent 0.67) for both tactile and visual intensity
-- **Result:** Natural-feeling intensity changes that preserve emotional dynamics
-- **Emotional access:** Tension, release, climax
-
-#### 4. **Temporal Evolution → Phyllotaxis Spiral Growth**
-
-- **Musical property:** Music unfolds over time
-- **MUSTEM implementation:** Growing spiral pattern (golden angle phyllotaxis)
-- **Result:** Visual representation of temporal evolution with natural aesthetic
-- **Emotional access:** Anticipation, development, resolution
+**Application in MUSTEM:**
+| Frequency | Semitone | Color |
+|-----------|----------|-------|
+| 40 Hz | 0 | Deep Red |
+| 440 Hz (A4) | 40 | Green |
+| 880 Hz (A5) | 52 | Green (similar) |
+| 6000 Hz | 83 | Purple-Magenta |
 
 ---
 
-## 💡 The Core Insight: Different ≠ Inferior
+### 3. Golden Ratio Phyllotaxis
+```
+θ[n] = n × 137.5° + ω(t)
+r[n] = c × √n
 
-### The Relativity of Sensory Experience
+Where:
+  θ = angle of nth point
+  r = radius of nth point
+  137.5° = golden angle (360° / φ²)
+  φ = golden ratio ≈ 1.618
+```
 
-A person born deaf does not experience their life as "missing something." They experience life **through the sensory modalities they have**.
+**Why it matters:** Phyllotaxis (found in sunflowers, pinecones, galaxies) maximizes packing efficiency while maintaining aesthetic beauty.
 
-Similarly:
-
-- A deaf person experiencing music through MUSTEM is not experiencing "music minus sound"
-- They are experiencing **music through their authentic sensory pathways**
-
-**This is not a compromise. This is simply how their perceptual system engages with musical structure.**
-
-### Analogy: Color Blindness
-
-Consider someone with red-green color blindness viewing a painting:
-
-**Wrong question:**
-
-> "Can they **truly** appreciate the painting if they can't see red?"
-
-**Right question:**
-
-> "Do they experience the painting in a way that is meaningful to them?"
-
-**Answer:** Yes. Their experience is different, but it's not "less valid" - it's simply **their experience**.
+**Application in MUSTEM:**
+- Each audio frame adds a new point at golden angle rotation
+- Radius grows as √n for uniform density
+- Creates organic, temporally-evolving spiral
 
 ---
 
-## 🌍 Challenging Hearing-Centric Assumptions
+## 📁 Repository Structure
+```
+MUSTEM/
+├── hardware/
+│   ├── firmware/
+│   │   ├── tactile_system/          # Arduino UNO code
+│   │   └── visual_system/           # Arduino Mega code
+│   ├── 3d_models/                   # 3D-printable enclosure
+│   ├── schematics/                  # Wiring diagrams
+│   └── bill_of_materials.md
+│
+├── software/
+│   ├── dashboard/                   # Educational interface
+│   └── visualization/               # Artistic visualization
+│
+├── docs/
+│   ├── PHILOSOPHICAL_FRAMEWORK.md   # Core arguments
+│   ├── TECHNICAL_DETAILS.md         # Deep dive
+│   ├── USER_GUIDE.md                # How to use
+│   └── ASSEMBLY_GUIDE.md            # How to build
+│
+├── research/
+│   ├── MUSTEM_EHB2025_slides.pdf    # Published paper
+│   └── MUSTEM_EHB2025_slides.pdf    # Conference slides
 
-### The Ableism Embedded in the Question
-
-When we ask "_Can deaf people truly experience music emotionally?_" we reveal assumptions:
-
-1. **Auditory experience is the standard**
-    - Implies all other modalities are approximations
-2. **Emotional validity requires auditory input**
-    - Ignores that emotion emerges from **pattern processing**, not ears
-3. **Deaf experience is inherently deficient**
-    - Positions deafness as lack, rather than difference
-
-**These assumptions are ableist.**
+```
 
 ---
 
-### A Better Framework: Co-Design and User Agency
+## 🚀 Getting Started
 
-**Who decides if a musical experience is "emotionally valid"?**
+### Prerequisites
 
-**Not researchers. Not hearing people. The deaf users themselves.**
+**Hardware:**
+- 1× Arduino Mega 2560
+- 1× Arduino UNO
+- 1× TFT LCD Shield 2.4" (320×240)
+- 4× ERM vibration motors (3.3V)
+- 1× Electret microphone
+- Jumper wires, breadboard
+- 3D printer (optional, for enclosure)
 
-MUSTEM's validation must center **deaf individuals' lived experience**:
+**Software:**
+- Arduino IDE 1.8+
+- Python 3.8+
+- Git
 
-- Do they find it meaningful?
-- Does it create emotional responses?
-- Does it enhance their engagement with music?
+---
 
-**Their answers define validity, not comparison to hearing experience.**
+### Hardware Setup
 
+1. **Clone repository:**
+```bash
+git clone https://github.com/palomafsette/MUSTEM.git
+cd MUSTEM
+```
 
-## 🌟 Final Reflection
+2. **3D print enclosure** (optional):
+```bash
+# Files in hardware/3d_models/
+# Use 0.2mm layer height, 20% infill
+```
 
-The question "_Can deaf people truly experience music emotionally?_" is not a question about deaf people's capacity.
+3. **Wire components:**
+   - Follow diagram: `hardware/schematics/system_wiring.png`
+   - Full guide: `docs/ASSEMBLY_GUIDE.md`
 
-**It's a question about our assumptions.**
+---
 
-When we assume auditory experience is the standard, we reveal more about **our biases** than about musical experience itself.
+### Firmware Installation
 
-**MUSTEM doesn't make deaf people experience music "like hearing people."**
+#### Tactile System (Arduino UNO):
+```bash
+cd hardware/firmware/tactile_system/
+# Open tactile_system.ino in Arduino IDE
+# Select: Tools → Board → Arduino UNO
+# Select: Tools → Port → [your port]
+# Upload
+```
 
-**MUSTEM enables deaf people to experience music authentically, through their own sensory reality.**
+#### Visual System (Arduino Mega):
+```bash
+cd hardware/firmware/visual_system/
+# Open visual_display_fft.ino in Arduino IDE
+# Install required libraries:
+#   - Adafruit GFX
+#   - Adafruit TFT
+#   - arduinoFFT
+# Select: Tools → Board → Arduino Mega 2560
+# Upload
+```
 
-**And that's not just valid - that's beautiful.**
+**See:** `hardware/firmware/README.md` for detailed instructions
 
+---
 
-## 📚 References
+### Software Installation
 
-- Darrow, A. A. (2006). The role of music in deaf culture: Deaf students' perception of emotion in music. _Journal of Music Therapy_, 43(1), 2-15.
-- Finney, E. M., Fine, I., & Dobkins, K. R. (2001). Visual stimuli activate auditory cortex in the deaf. _Nature Neuroscience_, 4(12), 1171-1173.
-- Glennie, E. (1993). _Hearing Essay_. Retrieved from [https://www.evelyn.co.uk/hearing-essay/](https://www.evelyn.co.uk/hearing-essay/)
-- Levänen, S., & Hamdorf, D. (2001). Feeling vibrations: enhanced tactile sensitivity in congenitally deaf humans. _Neuroscience Letters_, 301(1), 75-77.
-- Petitto, L. A., Zatorre, R. J., Gauna, K., Nikelski, E. J., Dostie, D., & Evans, A. C. (2000). Speech-like cerebral activity in profoundly deaf people processing signed languages: Implications for the neural basis of human language. _Proceedings of the National Academy of Sciences_, 97(25), 13961-13966.
+#### Dashboard (Educational Interface):
+```bash
+cd software/dashboard/
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python mustem_assistive_dashboard.py
+```
+
+#### Artistic Visualization:
+```bash
+cd software/visualization/
+pip install -r requirements.txt
+python mustem_artistic_visualization.py [audio_file.wav]
+```
+
+**See:** `software/README.md` for usage details
+
+---
+
+## 🎥 Video Demonstrations
+
+### Full System Demo
+[![Full System Demo](media/demo_video_thumbnail.png)](https://youtube.com/your-video-link)
+> Complete demonstration with "Uptown Funk" by Bruno Mars showing synchronized tactile, embedded visual, and dashboard outputs
+
+### Individual Components
+- [Vibrotactile System Demo](https://youtube.com/link)
+- [LCD Display Demo](https://youtube.com/link)
+- [Dashboard Interface Demo](https://youtube.com/link)
+- [Artistic Visualization Demo](https://youtube.com/link)
+
+**See:** `media/demo_videos/README.md` for more videos
+
+---
+
+## 📚 Research Paper
+
+**Title:** MUSTEM: A Dual-Modality System for Vibrotactile and Visual Translation of Music as an Assistive Technology
+
+**Published:** EHB 2025 - 13th International Conference on e-Health and Bioengineering  
+**Award:** Strong Accept  
+**Authors:** Paloma Sette, Maria Werneck, William Barbosa, Ana Loubacker
+
+📄 **Read the paper:** [`research/paper/MUSTEM_EHB2025.pdf`](research/paper/MUSTEM_EHB2025.pdf)  
+📊 **View slides:** [`research/presentation/MUSTEM_EHB2025_slides.pdf`](research/presentation/MUSTEM_EHB2025_slides.pdf)
+
+---
+
+## 🔧 Technical Details
+
+### Vibrotactile System
+
+**Signal Processing:**
+- EMA envelope detection (α_attack=0.3, α_decay=0.1)
+- Stevens' scaling: I = S^0.67
+- PWM output: 30-255 (8-bit)
+- Latency: <60ms (<100ms perceptual threshold)
+
+**Frequency Bands:**
+| Band | Range | Purpose | Wrist |
+|------|-------|---------|-------|
+| Kick | 20-80 Hz | Main beats | Left |
+| Bass | 80-300 Hz | Foundation | Left |
+| Voice | 300-2000 Hz | Melody | Right |
+| Treble | 2k-8k Hz | Texture | Right |
+
+**Perceptual Grounding:**
+- Fletcher-Munson aligned bands
+- Spatial discrimination: 40cm (>5cm JND)
+- Just-noticeable difference: 3 PWM levels
+
+---
+
+### Visual System
+
+**Frequency-to-Color Mapping:**
+- 9 bands: sub-bass → treble
+- Logarithmic spacing (12-tone equal temperament)
+- Preserves octave equivalence
+
+**Pattern Generation:**
+- Golden angle: θ = 137.5°
+- Fermat spiral: r = c√n
+- Real-time FFT: 512-point, 4 kHz sampling
+
+**Complete mapping:** `docs/TECHNICAL_DETAILS.md#visual-mapping`
+
+---
+
+## 💰 Bill of Materials
+
+| Component | Qty | Price (USD) | Link |
+|-----------|-----|-------------|------|
+| Arduino Mega 2560 | 1 | $15 | [Link](https://store.arduino.cc) |
+| Arduino UNO | 1 | $10 | [Link](https://store.arduino.cc) |
+| TFT LCD Shield 2.4" | 1 | $12 | [Link](example.com) |
+| ERM Vibration Motor 3.3V | 4 | $8 | [Link](example.com) |
+| Electret Microphone | 1 | $2 | [Link](example.com) |
+| Jumper Wires & Breadboard | 1 | $5 | [Link](example.com) |
+| **TOTAL** | | **~$52** | |
+
+**See:** `hardware/bill_of_materials.md` for complete list with supplier links
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
+
+### Areas Where We Need Help:
+
+- [ ] **Hardware:** Alternative motor configurations, better enclosure designs
+- [ ] **Firmware:** Optimization for lower latency, additional frequency bands
+- [ ] **Software:** Mobile app development, cloud music library
+- [ ] **Research:** User studies, validation with deaf community
+- [ ] **Documentation:** Translations, tutorials, assembly videos
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
+
+**TL;DR:** You can use, modify, and distribute this work freely, even commercially, as long as you include the original copyright notice.
+
+---
+
+## 📖 Citation
+
+If you use MUSTEM in your research, please cite:
+```bibtex
+@inproceedings{sette2025mustem,
+  title={MUSTEM: A Dual-Modality System for Vibrotactile and Visual Translation of Music as an Assistive Technology},
+  author={Sette, Paloma and Werneck, Maria and Barbosa, William and Loubacker, Ana},
+  booktitle={13th International Conference on e-Health and Bioengineering (EHB)},
+  year={2025},
+  organization={IEEE}
+}
+```
+
+---
+
+## 🙏 Acknowledgments
+
+- **PUC-Rio** - Pontifícia Universidade Católica do Rio de Janeiro
+- **EHB 2025** - International Conference on e-Health and Bioengineering
+- **Deaf community** - For feedback and co-design input
+- **Open-source contributors** - Arduino, Python, and maker communities
+
+---
+
+## 📧 Contact
+
+**Paloma Sette** - Research Lead  
+📧 Email: [your-email]  
+🔗 LinkedIn: [your-linkedin]  
+🐦 Twitter: [@your-handle]
+
+**Project Link:** [https://github.com/palomafsette/MUSTEM](https://github.com/palomafsette/MUSTEM)
+
+---
+
+<div align="center">
+
+**Making music universally accessible - not just hearing it differently, but experiencing it fully.**
+
+🎵 430M+ potential beneficiaries worldwide 🌍
+
+**[⭐ Star this repo](https://github.com/palomafsette/MUSTEM) • [🍴 Fork it](https://github.com/palomafsette/MUSTEM/fork) • [📣 Share it](https://twitter.com/intent/tweet?text=Check%20out%20MUSTEM)**
+
+</div>
